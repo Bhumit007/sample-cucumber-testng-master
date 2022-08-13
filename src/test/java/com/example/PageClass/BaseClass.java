@@ -4,13 +4,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.PageFactory;
-
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
-import java.util.concurrent.TimeUnit;
 
 public class BaseClass {
 
@@ -45,16 +43,7 @@ public class BaseClass {
         driver.manage().window().maximize();
         loginPage = PageFactory.initElements(driver, LoginPage.class);
     }
-
-    public static void navigateToHome(){
-        driver.get("http://tutorialsninja.com/demo/");
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
-    }
-
     public static void closeDriver(){
         driver.quit();
     }
-
-
 }
